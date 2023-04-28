@@ -17,4 +17,7 @@ public interface CardRepo extends CrudRepository<Card, Integer> {
     @Query(value = "SELECT * FROM Cards", nativeQuery = true)
     List<Card> findAll();
 
+    @Query(value = "SELECT * FROM Cards WHERE idDeck = :idDeck", nativeQuery = true)
+    List<Card> findCardByIdDeck(@Param("idDeck") Integer idDeck);
+
 }

@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping(value = "/card")
 @AllArgsConstructor
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class CardsController {
+public class CardController {
 
     private final CardService cardService;
 
@@ -25,6 +25,11 @@ public class CardsController {
     @GetMapping("/{id}")
     public ResponseEntity<Card> getCardById(@PathVariable Integer id) {
         return ResponseEntity.ok(cardService.getCardById(id));
+    }
+
+    @GetMapping("/deck/{idDeck}")
+    public ResponseEntity<List<Card>> getCardsByDeckId(@PathVariable Integer idDeck) {
+        return ResponseEntity.ok(cardService.getAllCardsByDeckId(idDeck));
     }
 
 }

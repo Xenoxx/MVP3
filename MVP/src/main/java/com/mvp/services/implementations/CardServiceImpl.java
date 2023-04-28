@@ -23,4 +23,9 @@ public class CardServiceImpl implements CardService {
     public List<Card> getAllCards() {
         return cardRepo.findAll();
     }
+
+    @Override
+    public List<Card> getAllCardsByDeckId(Integer id) {
+        return cardRepo.findCardByIdDeck(id);
+    }
 }

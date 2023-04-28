@@ -8,5 +8,7 @@ public interface CardService {
 
     Card getCardById(Integer id);
     List<Card> getAllCards();
+    List<Card> getAllCardsByDeckId(Integer id);
+
 
 }
