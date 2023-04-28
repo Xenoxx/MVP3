@@ -1,5 +1,6 @@
 package com.mvp.domain;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,23 +8,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "Deck")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AppUser {
+public class Deck {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Id")
+    @Column(name = "idDeck")
     private Integer id;
 
-    @Version
-    private Integer version;
-
-    private String userName;
-    private String password;
-    private String email;
-
-
+    @Column(name = "DeckName")
+    private String deckName;
+//    @OneToMany
+//    private List<Card> cardList;
 
 }

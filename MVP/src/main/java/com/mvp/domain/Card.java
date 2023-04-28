@@ -5,25 +5,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
+@Entity
+@Table(name = "Cards")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AppUser {
+public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Id")
+    @Column(name = "idCards")
     private Integer id;
 
-    @Version
-    private Integer version;
-
-    private String userName;
-    private String password;
-    private String email;
-
-
+    @Column(name = "idDeck")
+    private Integer idDeck;
+    @Column(name = "Term")
+    private String term;
+    @Column(name = "Definition")
+    private String definition;
 
 }
